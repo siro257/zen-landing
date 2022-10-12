@@ -12,10 +12,24 @@ const rand = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 let prev = 0;
 
-setInterval(() => {
+const changer = () => {
   index = uniqueRand(1, 6, prev);
   console.log(index);
   wrapper.dataset.roundness = index;
 
   prev = index;
-}, 3000);
+};
+
+let myTimer = setInterval(changer, 3000);
+
+for (let i = 0; i < wrapper.childNodes.length; i++) {
+  let node = wrapper.childNodes[i];
+  if (node.className === 'shape') {
+    node.addEventListener('mouseover', () => {
+      clearInterval(myTimer);
+    });
+    node.addEventListener('mouseout', () => {
+      myTimer = setInterval(changer, 3000);
+    });
+  }
+}

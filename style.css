@@ -52,6 +52,13 @@ body {
 #wrapper[data-roundness='1'] > .shape {
   border-radius: 6rem;
 }
+#wrapper[data-roundness] > .shape:hover {
+  border-bottom-left-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+  border-top-right-radius: 0rem;
+  border-top-left-radius: 0rem;
+  border-radius: 0rem;
+}
 
 #wrapper[data-roundness='1'] > .shape:nth-child(1) {
   left: 0%;
@@ -282,9 +289,9 @@ body {
   width: calc(28% / 1.618);
 }
 
-#wrapper[data-roundness='6'] > .shape {
+/* #wrapper[data-roundness='6'] > .shape {
   border-radius: 0rem;
-}
+} */
 #wrapper[data-roundness='6'] > .shape:nth-child(1) {
   border-bottom-left-radius: 10rem;
   left: 0%;
