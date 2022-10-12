@@ -10,11 +10,10 @@ const uniqueRand = (min, max, prev) => {
 
 const rand = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
-let prev = 0;
+let prev = 1;
 
 const changer = () => {
   index = uniqueRand(1, 6, prev);
-  console.log(index);
   wrapper.dataset.roundness = index;
 
   prev = index;
